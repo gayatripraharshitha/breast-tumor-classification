@@ -1,0 +1,12 @@
+numpy
+pandas
+scipy
+matplotlib
+seaborn
+scikit-learn
+jupyter
+ucimlrepo
+tabpfn
+torch
+huggingface-hub
+statsmodels
