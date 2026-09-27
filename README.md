@@ -1,9 +1,8 @@
-````markdown
 # Breast Tumor Classification: Model Performance, Validation and Robustness
 
 A machine-learning study of breast tumor classification using the Wisconsin Breast Cancer Original dataset, focusing on model evaluation, validation, probability calibration, feature stability, error analysis, and prediction uncertainty.
 
-> **Project focus:** Investigating how evaluation methodology affects the apparent reliability of machine-learning models for breast-tumor classification.
+**Project focus:** Investigating how evaluation methodology affects the apparent reliability of machine-learning models for breast-tumor classification.
 
 ---
 
@@ -31,25 +30,25 @@ Rather than relying on a single accuracy value, the study evaluates models acros
 
 The primary dataset is the **Wisconsin Breast Cancer Original (WBC)** dataset from the UCI Machine Learning Repository.
 
-| Property | Value |
-|---|---:|
-| Observations | 699 |
-| Features | 9 |
-| Benign observations | 458 |
-| Malignant observations | 241 |
-| Feature scale | 1–10 |
-| Missing values | 16 |
-| Missing-value feature | `Bare_nuclei` |
+| Property               |         Value |
+| ---------------------- | ------------: |
+| Observations           |           699 |
+| Features               |             9 |
+| Benign observations    |           458 |
+| Malignant observations |           241 |
+| Feature scale          |          1–10 |
+| Missing values         |            16 |
+| Missing-value feature  | `Bare_nuclei` |
 
 Original target labels:
 
-- `2` — benign
-- `4` — malignant
+* `2` — benign
+* `4` — malignant
 
 For modeling:
 
-- `0` — benign
-- `1` — malignant
+* `0` — benign
+* `1` — malignant
 
 The dataset contains nine integer-valued features describing characteristics of cell nuclei from breast-tumor samples.
 
@@ -65,41 +64,25 @@ See [`DATASET.md`](DATASET.md) for dataset documentation and citation informatio
 
 The analysis follows this workflow:
 
-```text
-Dataset inspection
-        ↓
-Missing-value analysis
-        ↓
-Exploratory data analysis
-        ↓
-Target encoding
-        ↓
-Stratified train/test split
-        ↓
-Preprocessing pipelines
-        ↓
-Classical baseline models
-        ↓
-Repeated stratified cross-validation
-        ↓
-Threshold and calibration analysis
-        ↓
-Neural-network complexity analysis
-        ↓
-Error and confidence analysis
-        ↓
-Cross-model disagreement
-        ↓
-TabPFN benchmark
-        ↓
-Feature stability
-        ↓
-Missing-data sensitivity
-        ↓
-Confidence-based abstention
-        ↓
-Final interpretation
-````
+```mermaid
+flowchart TD
+    A[Dataset Inspection] --> B[Missing-Value Analysis]
+    B --> C[Exploratory Data Analysis]
+    C --> D[Target Encoding]
+    D --> E[Stratified Train/Test Split]
+    E --> F[Preprocessing Pipelines]
+    F --> G[Classical Baseline Models]
+    G --> H[Repeated Stratified Cross-Validation]
+    H --> I[Threshold and Calibration Analysis]
+    I --> J[Neural-Network Complexity Analysis]
+    J --> K[Error and Confidence Analysis]
+    K --> L[Cross-Model Disagreement]
+    L --> M[TabPFN Benchmark]
+    M --> N[Feature Stability]
+    N --> O[Missing-Data Sensitivity]
+    O --> P[Confidence-Based Abstention]
+    P --> Q[Final Interpretation]
+```
 
 ### Preprocessing
 
@@ -124,11 +107,11 @@ Keeping preprocessing inside the pipeline prevents information from the evaluati
 
 Three MLP architectures were evaluated:
 
-```text
-MLP - 1 Hidden Layer:  (32,)
-MLP - 2 Hidden Layers: (32, 16)
-MLP - 3 Hidden Layers: (32, 16, 8)
-```
+| Architecture          | Hidden Layers |
+| --------------------- | ------------- |
+| MLP - 1 Hidden Layer  | `(32,)`       |
+| MLP - 2 Hidden Layers | `(32, 16)`    |
+| MLP - 3 Hidden Layers | `(32, 16, 8)` |
 
 The MLP experiments use ReLU activation, Adam optimization, early stopping, standardized features, and median imputation.
 
@@ -384,18 +367,15 @@ Overall, the project emphasizes **evaluation and interpretation rather than mode
 breast-tumor-classification/
 ├── notebooks/
 │   └── 01_dataset_understanding.ipynb
-│
 ├── src/
 │   ├── preprocessing.py
 │   ├── models.py
 │   ├── evaluation.py
 │   └── analysis.py
-│
 ├── tests/
 │   ├── test_preprocessing.py
 │   ├── test_models.py
 │   └── test_evaluation.py
-│
 ├── .gitignore
 ├── DATASET.md
 ├── README.md
@@ -434,42 +414,13 @@ Automated tests using `pytest` cover:
 
 # Reproducibility
 
-## 1. Clone the Repository
-
-```bash
-git clone https://github.com/gayatripraharshitha/breast-tumor-classification.git
-cd breast-tumor-classification
-```
-
-## 2. Create a Virtual Environment
-
-### Windows
-
-```powershell
-python -m venv .venv
-.venv\Scripts\activate
-```
-
-### macOS / Linux
-
-```bash
-python -m venv .venv
-source .venv/bin/activate
-```
-
-## 3. Install Dependencies
-
-```bash
-pip install -r requirements.txt
-```
-
-## 4. Run the Tests
+## Run the Tests
 
 ```bash
 python -m pytest
 ```
 
-## 5. Run the Notebook
+## Run the Notebook
 
 Open:
 
@@ -551,6 +502,7 @@ Never commit the credential to Git or place it directly inside the notebook.
 **Breast Cancer Wisconsin (Original)**
 
 UCI Machine Learning Repository
+
 Dataset ID: 15
 
 The dataset is accessed programmatically using the `ucimlrepo` package.
@@ -573,9 +525,6 @@ The reported results describe model behavior on the dataset and evaluation proce
 
 **Gayatri Praharshitha**
 
-GitHub:
-[https://github.com/gayatripraharshitha](https://github.com/gayatripraharshitha)
-
 ---
 
 # Project Status
@@ -597,25 +546,3 @@ The repository contains:
 * Reusable source modules
 * Automated tests
 * Reproducibility documentation
-
-```
-```
-
-
-**Status:** Research analysis and portfolio implementation complete.
-
-The repository currently contains:
-
-- Dataset analysis
-- Classical machine-learning baselines
-- Repeated cross-validation
-- Neural-network complexity analysis
-- Probability calibration
-- Error and uncertainty analysis
-- TabPFN benchmarking
-- Feature stability analysis
-- Missing-data sensitivity analysis
-- Confidence-based abstention
-- Reusable source modules
-- Automated tests
-- Documentation and reproducibility instructions
