@@ -1,4 +1,3 @@
-````markdown
 # Breast Tumor Classification: Model Performance, Validation and Robustness
 
 A machine-learning study of breast tumor classification using the Wisconsin Breast Cancer Original dataset, focusing on model evaluation, validation, probability calibration, feature stability, error analysis, and prediction uncertainty.
@@ -67,39 +66,70 @@ The analysis follows this workflow:
 
 ```text
 Dataset inspection
+
         ↓
+
 Missing-value analysis
+
         ↓
+
 Exploratory data analysis
+
         ↓
+
 Target encoding
+
         ↓
+
 Stratified train/test split
+
         ↓
+
 Preprocessing pipelines
+
         ↓
+
 Classical baseline models
+
         ↓
+
 Repeated stratified cross-validation
+
         ↓
+
 Threshold and calibration analysis
+
         ↓
+
 Neural-network complexity analysis
+
         ↓
+
 Error and confidence analysis
+
         ↓
+
 Cross-model disagreement
+
         ↓
+
 TabPFN benchmark
+
         ↓
+
 Feature stability
+
         ↓
+
 Missing-data sensitivity
+
         ↓
+
 Confidence-based abstention
+
         ↓
+
 Final interpretation
-````
 
 ### Preprocessing
 
